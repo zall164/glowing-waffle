@@ -1,0 +1,254 @@
+.exhibitions-page {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exhibitions-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8rem;
+  color: var(--text-primary);
+}
+
+.exhibitions-subtitle {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.exhibitions-count {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.exhibitions-add {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: var(--bg-tertiary);
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+.exhibitions-add h2 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.exhibitions-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.exhibitions-form-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.exhibitions-form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.exhibitions-form-group label {
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.exhibitions-form-group .form-input {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.exhibitions-form-group .form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.exhibitions-form-group textarea.form-input {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.exhibitions-form-group.flex-2 {
+  flex: 2;
+}
+
+.exhibitions-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.exhibitions-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.exhibition-item {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-tertiary);
+  border-radius: 6px;
+  border-left: 3px solid var(--primary-color);
+}
+
+.exhibition-item-link {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.exhibition-item-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px var(--shadow);
+}
+
+.exhibition-year {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.exhibition-id {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+.exhibition-year-text {
+  color: var(--text-primary);
+}
+
+.exhibition-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.exhibition-title {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.exhibition-location {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.exhibition-notes {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+}
+
+.exhibitions-page.loading,
+.exhibitions-page.error {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .exhibitions-page {
+    padding: 0.75rem;
+    border-radius: 0;
+  }
+
+  .exhibitions-header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .exhibitions-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .exhibitions-add {
+    margin-top: 1rem;
+    padding: 0.75rem;
+  }
+
+  .exhibitions-add h2 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .exhibitions-form {
+    gap: 0.5rem;
+  }
+
+  .exhibitions-form-group label {
+    font-size: 0.8rem;
+  }
+
+  .exhibitions-form-group .form-input {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .exhibitions-list {
+    margin-top: 1rem;
+    gap: 0.5rem;
+  }
+
+  .exhibition-item {
+    grid-template-columns: 1fr;
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .exhibition-year {
+    font-size: 0.9rem;
+  }
+
+  .exhibition-title {
+    font-size: 0.95rem;
+  }
+
+  .exhibition-location {
+    font-size: 0.85rem;
+  }
+
+  .exhibition-notes {
+    font-size: 0.8rem;
+  }
+
+  .exhibitions-page.loading,
+  .exhibitions-page.error {
+    padding: 1.5rem 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .exhibitions-page {
+    padding: 0.5rem;
+  }
+
+  .exhibitions-header h1 {
+    font-size: 1.25rem;
+  }
+}
+
+

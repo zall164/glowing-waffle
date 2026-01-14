@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  artarc4u:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: artarc4u
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+    volumes:
+      # Persist database
+      - ./server/data:/app/server/data
+      # Persist media files
+      - ./server/media:/app/server/media
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/api/admin/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

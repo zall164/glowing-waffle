@@ -1,0 +1,165 @@
+.contact-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-page.loading {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-secondary);
+}
+
+.contact-page h1 {
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-section {
+  padding: 1.5rem;
+  background-color: var(--bg-primary);
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-section h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.contact-section p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.contact-email {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.contact-email a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-email a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+.contact-bio,
+.contact-statement {
+  color: var(--text-primary);
+  line-height: 1.8;
+  transition: color 0.3s ease;
+}
+
+.contact-bio p,
+.contact-statement p {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.contact-bio p:last-child,
+.contact-statement p:last-child {
+  margin-bottom: 0;
+}
+
+.contact-empty {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 0.75rem;
+    border-radius: 0;
+  }
+
+  .contact-page h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-content {
+    gap: 1rem;
+  }
+
+  .contact-section {
+    padding: 1rem;
+  }
+
+  .contact-section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-section p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-email {
+    font-size: 1rem;
+    margin-top: 0.75rem;
+  }
+
+  .contact-bio,
+  .contact-statement {
+    font-size: 0.95rem;
+  }
+
+  .contact-empty {
+    padding: 2rem 1rem;
+  }
+
+  .contact-page.loading {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-page {
+    padding: 0.5rem;
+  }
+
+  .contact-page h1 {
+    font-size: 1.25rem;
+  }
+
+  .contact-section {
+    padding: 0.75rem;
+  }
+}
+
+
+
+
+
+
+
+
+

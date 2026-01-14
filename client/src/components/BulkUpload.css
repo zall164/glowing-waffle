@@ -1,0 +1,454 @@
+.bulk-upload {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bulk-upload h1 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.bulk-upload-info {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: var(--bg-tertiary);
+  border-radius: 6px;
+  border-left: 4px solid var(--primary-color);
+  transition: background-color 0.3s ease;
+}
+
+.bulk-upload-info p {
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.bulk-upload-info p:last-child {
+  margin-bottom: 0;
+}
+
+.info-note {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.info-note p {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.info-note p:last-child {
+  margin-bottom: 0;
+}
+
+.info-note ul {
+  margin: 0.5rem 0 0.75rem 1.5rem;
+  padding: 0;
+}
+
+.info-note li {
+  margin-bottom: 0.25rem;
+  line-height: 1.4;
+}
+
+.info-note code {
+  background-color: var(--bg-secondary);
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85em;
+}
+
+.bulk-upload-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.file-select-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.bulk-upload-label {
+  display: inline-block;
+  padding: 0.625rem 1.25rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 0.9rem;
+  width: fit-content;
+}
+
+.bulk-upload-label:hover {
+  background-color: var(--primary-hover);
+}
+
+.file-input {
+  display: none;
+}
+
+.file-summary {
+  padding: 0.75rem;
+  background-color: var(--bg-tertiary);
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.file-summary p {
+  margin: 0.25rem 0;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.file-summary .warning {
+  color: var(--error-color);
+  font-weight: 500;
+}
+
+.bulk-upload-options {
+  background-color: var(--bg-tertiary);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.auto-create-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.auto-create-option input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.option-description {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  padding-left: 2rem;
+  transition: color 0.3s ease;
+}
+
+.file-preview {
+  padding: 1rem;
+  background-color: var(--bg-tertiary);
+  border-radius: 6px;
+  max-height: 400px;
+  overflow-y: auto;
+  transition: background-color 0.3s ease;
+}
+
+.file-preview h3 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.file-group {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: var(--bg-secondary);
+  border-radius: 4px;
+  border-left: 3px solid var(--primary-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.file-group.unmatched {
+  border-left-color: var(--error-color);
+}
+
+.file-group h4 {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.file-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.file-group li {
+  padding: 0.25rem 0;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.file-group li .primary-badge {
+  background-color: var(--success-color);
+  color: white;
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.file-group li .suffix-badge {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.error-text {
+  color: var(--error-color);
+}
+
+.progress-container {
+  margin-top: 0.5rem;
+}
+
+.progress-status {
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 4px 4px 0 0;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.progress-bar-container {
+  position: relative;
+  width: 100%;
+  height: 24px;
+  background-color: var(--bg-secondary);
+  border-radius: 0 0 4px 4px;
+  overflow: hidden;
+  margin-top: 2px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.75rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.upload-progress-section {
+  padding: 1rem;
+  background-color: var(--bg-tertiary);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  border: 2px solid var(--primary-color);
+}
+
+.overall-progress {
+  margin-bottom: 1rem;
+}
+
+.overall-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.overall-progress-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.progress-percentage {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.overall-progress-bar {
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
+  height: 28px;
+}
+
+.progress-counts {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.current-file-status {
+  padding: 0.75rem;
+  background-color: var(--bg-secondary);
+  border-radius: 4px;
+  border-left: 3px solid var(--primary-color);
+}
+
+.current-file-status strong {
+  color: var(--text-primary);
+  margin-right: 0.5rem;
+}
+
+.current-file-status span {
+  color: var(--text-secondary);
+}
+
+.current-status {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.bulk-upload-btn {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  align-self: flex-start;
+}
+
+.upload-results {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: var(--bg-tertiary);
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.upload-results h3 {
+  margin: 0;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.clear-results-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.results-summary {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.result-item {
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.result-item.success {
+  background-color: rgba(46, 204, 113, 0.2);
+  color: var(--success-color);
+}
+
+.result-item.failed {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: var(--error-color);
+}
+
+.result-item.skipped {
+  background-color: rgba(149, 165, 166, 0.2);
+  color: var(--text-secondary);
+}
+
+.failed-list {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--bg-secondary);
+  border-radius: 4px;
+  border-left: 3px solid var(--error-color);
+  transition: background-color 0.3s ease;
+}
+
+.failed-list h4 {
+  margin-bottom: 0.75rem;
+  color: var(--error-color);
+  font-size: 0.95rem;
+}
+
+.failed-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.failed-list li {
+  padding: 0.5rem 0;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.failed-list li:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .bulk-upload {
+    padding: 1rem;
+  }
+  
+  .results-summary {
+    flex-direction: column;
+  }
+  
+  .file-preview {
+    max-height: 300px;
+  }
+}
+
