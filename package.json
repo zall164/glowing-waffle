@@ -9,8 +9,7 @@
     "start:dev": "concurrently \"npm run start:server\" \"npm run start:client\" --names \"SERVER,CLIENT\" --prefix-colors \"blue,green\"",
     "start:prod": "npm run build && npm start",
     "build": "cd client && npm run build",
-    "install-all": "npm install && cd server && npm install && cd ../client && npm install && cd ../admin-gui && npm install",
-    "admin": "cd admin-gui && npm start"
+    "install-all": "npm install && npm --prefix server install && npm --prefix client install"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"

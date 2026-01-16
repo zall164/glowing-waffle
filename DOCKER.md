@@ -64,8 +64,8 @@ docker build -t artarc4u .
 docker run -d \
   --name artarc4u \
   -p 3000:3000 \
-  -v $(pwd)/server/data:/app/data \
-  -v $(pwd)/server/media:/app/media \
+  -v $(pwd)/server/data:/app/server/data \
+  -v $(pwd)/server/media:/app/server/media \
   artarc4u
 ```
 
@@ -74,8 +74,8 @@ On Windows PowerShell:
 docker run -d `
   --name artarc4u `
   -p 3000:3000 `
-  -v ${PWD}/server/data:/app/data `
-  -v ${PWD}/server/media:/app/media `
+  -v ${PWD}/server/data:/app/server/data `
+  -v ${PWD}/server/media:/app/server/media `
   artarc4u
 ```
 
@@ -83,8 +83,8 @@ docker run -d `
 
 The Docker setup uses volumes to persist your data:
 
-- **Database**: `./server/data` → `/app/data` in container
-- **Media files**: `./server/media` → `/app/media` in container
+- **Database**: `./server/data` → `/app/server/data` in container
+- **Media files**: `./server/media` → `/app/server/media` in container
 
 This means your database and media files are stored on your host machine and will persist even if you remove the container.
 

@@ -35,7 +35,12 @@ ArtArc4U/
 
 ## Installation
 
-1. **Install dependencies**:
+1. **Install dependencies (recommended)**:
+   ```bash
+   npm run install-all
+   ```
+
+2. **Or install manually**:
    ```bash
    npm install
    cd server && npm install
