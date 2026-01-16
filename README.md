@@ -111,6 +111,38 @@ cd client && npm start
 
 **Note:** When running separately, make sure the backend is running on port 3000 before starting the frontend.
 
+## Windows Portable EXE (Desktop App)
+
+Build a single portable Windows executable using Electron. This bundles the backend server and the React build into a desktop app.
+
+1. Install dependencies:
+   ```bash
+   npm run install-all
+   ```
+2. Build the portable exe (run on Windows):
+   ```bash
+   npm run package:win
+   ```
+
+Output: `dist/ArtArc4U-Portable-<version>.exe`
+
+### Desktop Mode (from source)
+
+If you want to run the desktop app locally from source:
+```bash
+npm run build
+npm run start:desktop
+```
+
+### Portable Data Location
+
+- The portable exe stores data in a sibling folder named `ArtArc4U-Data` next to the exe.
+- Override the storage path by setting one of these environment variables before running:
+  - `ARTARC_STORAGE_DIR` (preferred)
+  - `ARTARC_DATA_DIR`
+  - `ARTARC_MEDIA_DIR`
+  - `ARTARC_DB_PATH`
+
 ## API Endpoints
 
 ### Artworks

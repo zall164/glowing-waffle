@@ -2,7 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const { db, MEDIA_DIR } = require('../database');
+const { db, MEDIA_DIR, DB_PATH } = require('../database');
 
 function isArtworkDirName(name) {
   return /^[0-9]{6}$/.test(name);
@@ -48,9 +48,10 @@ function normalizeFromHistory(val) {
 
 async function run() {
   const root = MEDIA_DIR;
-  const backupPath = path.join(__dirname, '..', 'data', `artarc.db.backup_${new Date().toISOString().replace(/[:.]/g, '-')}`);
+  const backupDir = path.dirname(DB_PATH);
+  const backupPath = path.join(backupDir, `artarc.db.backup_${new Date().toISOString().replace(/[:.]/g, '-')}`);
   try {
-    fs.copyFileSync(path.join(__dirname, '..', 'data', 'artarc.db'), backupPath);
+    fs.copyFileSync(DB_PATH, backupPath);
     console.log(`DB backup created: ${backupPath}`);
   } catch (e) {
     console.error('Failed to create DB backup copy; aborting.', e);

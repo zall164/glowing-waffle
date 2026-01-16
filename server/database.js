@@ -1,13 +1,14 @@
 const sqlite3 = require('sqlite3').verbose();
-const path = require('path');
 const fs = require('fs-extra');
 const bcrypt = require('bcrypt');
+const { resolveStoragePaths } = require('./storage-paths');
 
-const DB_PATH = path.join(__dirname, 'data', 'artarc.db');
-const MEDIA_DIR = path.join(__dirname, 'media');
+const { dataDir, mediaDir, dbPath } = resolveStoragePaths();
+const DB_PATH = dbPath;
+const MEDIA_DIR = mediaDir;
 
 // Ensure directories exist
-fs.ensureDirSync(path.dirname(DB_PATH));
+fs.ensureDirSync(dataDir);
 fs.ensureDirSync(MEDIA_DIR);
 
 const db = new sqlite3.Database(DB_PATH, (err) => {
