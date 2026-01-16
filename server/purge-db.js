@@ -1,9 +1,9 @@
 const sqlite3 = require('sqlite3').verbose();
-const path = require('path');
+const { resolveStoragePaths } = require('./storage-paths');
 
-const DB_PATH = path.join(__dirname, 'data', 'artarc.db');
+const { dbPath } = resolveStoragePaths();
 
-const db = new sqlite3.Database(DB_PATH, (err) => {
+const db = new sqlite3.Database(dbPath, (err) => {
   if (err) {
     console.error('Error opening database:', err);
     process.exit(1);

@@ -2,16 +2,47 @@
   "name": "artarc4u",
   "version": "1.0.0",
   "description": "ArtArc4U - Artwork Management System",
+  "main": "desktop/main.js",
   "scripts": {
     "start": "node server/index.js",
     "start:server": "node server/index.js",
     "start:client": "cd client && npm start",
     "start:dev": "concurrently \"npm run start:server\" \"npm run start:client\" --names \"SERVER,CLIENT\" --prefix-colors \"blue,green\"",
     "start:prod": "npm run build && npm start",
+    "start:desktop": "electron .",
     "build": "cd client && npm run build",
-    "install-all": "npm install && npm --prefix server install && npm --prefix client install"
+    "install-all": "npm install && npm --prefix server install && npm --prefix client install",
+    "rebuild:server": "electron-rebuild -f --module-dir server",
+    "package:win": "npm run build && npm --prefix server install --omit=dev && npm run rebuild:server && electron-builder --win portable"
+  },
+  "build": {
+    "appId": "com.artarc4u.desktop",
+    "productName": "ArtArc4U",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "desktop/**/*",
+      "server/**/*",
+      "client/build/**/*",
+      "package.json",
+      "!server/data/**",
+      "!server/media/**"
+    ],
+    "asarUnpack": [
+      "**/*.node"
+    ],
+    "win": {
+      "target": "portable"
+    },
+    "portable": {
+      "artifactName": "ArtArc4U-Portable-${version}.exe"
+    }
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "@electron/rebuild": "^4.0.2",
+    "concurrently": "^8.2.2",
+    "electron": "^40.0.0",
+    "electron-builder": "^26.4.0"
   }
 }
